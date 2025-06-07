@@ -86,7 +86,9 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## ✨ Screenshots
 
-> _Add screenshots or GIFs here to showcase the UI!_ > ![Home Page](/public/ss1.jpeg)
+[Home Page](/public/ss1.jpeg)
+[Home Page](/public/ss2.jpeg)
+[Home Page](/public/ss3.jpeg)
 
 ---
 
