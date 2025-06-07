@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 import { FeatureCards } from "@/components/feature-cards";
+import { AnimatedTestimonials } from "@/components/testimonial-card";
 
 export default function Home() {
   return (
@@ -187,7 +188,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Testimonials Cards */}
+          <AnimatedTestimonials testimonials={testimonials} />
+          
+          {/* Basic Grid 3 Cards */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
@@ -215,7 +220,7 @@ export default function Home() {
                 </CardContent>
               </Card>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
