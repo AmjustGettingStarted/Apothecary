@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import Header from "@/components/header";
 import { dark } from "@clerk/themes";
 import { ThemeProvider } from "@/components/theme-provider";
+import { format } from "date-fns";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +36,9 @@ export default function RootLayout({ children }) {
             <main className="min-h-screen">{children}</main>
             <Toaster richColors />
 
-            <footer className="bg-muted/50 py-12">
-              <div className="container mx-auto px-4 text-center text-gray-200">
-                <p>Made with 💗 by RoadsideCoder</p>
+            <footer className="bg-[#1B1B1B] py-8">
+              <div className="container mx-auto px-4 text-center text-gray-200 flex justify-center">
+                <p>© {format(new Date(), "yyyy")} || HMV || ConsultX</p>
               </div>
             </footer>
           </ThemeProvider>
