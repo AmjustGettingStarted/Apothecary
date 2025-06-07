@@ -1,4 +1,4 @@
-# 🩺 Medimeet – Doctors Appointment Platform
+# 🩺 ConsultX – Doctors Appointment Platform
 
 A modern, full-stack platform for booking, managing, and monetizing doctor appointments. Built with Next.js, Clerk authentication, and a robust credit-based system for patients and doctors.
 
@@ -19,7 +19,7 @@ A modern, full-stack platform for booking, managing, and monetizing doctor appoi
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js (App Router), React, Tailwind CSS
+- **Frontend:** Next.js , Tailwind CSS , ShadcnUI
 - **Backend:** Next.js API routes, Prisma ORM
 - **Auth & Billing:** Clerk
 - **Database:** PostgreSQL (or your preferred DB)
@@ -33,8 +33,8 @@ A modern, full-stack platform for booking, managing, and monetizing doctor appoi
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/doctors-appointment-platform.git
-cd doctors-appointment-platform
+git clone https://github.com/your-username/Apothecary.git
+cd Apothecary
 ```
 
 ### 2. Install Dependencies
@@ -86,7 +86,7 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## ✨ Screenshots
 
-> _Add screenshots or GIFs here to showcase the UI!_
+> _Add screenshots or GIFs here to showcase the UI!_ > ![Home Page](/public/ss1.jpeg)
 
 ---
 
@@ -98,21 +98,9 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
 
-## 🛡️ License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
 ## 📬 Contact
 
 Questions? Suggestions?  
-Open an issue or reach out at [your-email@example.com](mailto:your-email@example.com).
+Open an issue or reach out at [gamerhmv2050@gmail.com](mailto:gamerhmv2050@gmail.com).
 
 ---
