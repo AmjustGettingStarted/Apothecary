@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { SPECIALTIES } from "@/lib/specialities";
+import { DoctorsCards } from "@/components/doctors-cards";
 
 export default async function DoctorsPage() {
   return (
@@ -11,7 +12,12 @@ export default async function DoctorsPage() {
           Browse by specialty or view all available healthcare providers
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+      {/* ACETERNITY hover Effect */}
+      <DoctorsCards items={SPECIALTIES} />
+      
+      {/* Basic Hover Effect */}
+      {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {SPECIALTIES.map((specialty) => (
           <Link key={specialty.name} href={`/doctors/${specialty.name}`}>
             <Card className="hover:border-emerald-700/40 transition-all cursor-pointer border-emerald-900/20 h-full">
@@ -24,7 +30,7 @@ export default async function DoctorsPage() {
             </Card>
           </Link>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
