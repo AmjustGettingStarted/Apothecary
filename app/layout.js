@@ -10,7 +10,7 @@ import { format } from "date-fns";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Doctors Appointment App",
+  title: "ConsultX 🩺 ",
   description: "Connect with doctors anytime, anywhere",
 };
 
