@@ -25,16 +25,16 @@ export const FeatureCards = ({items}) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-emerald-600 dark:bg-emerald-600 block  rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 0.30 },
+                  transition: { duration: 0.15 },
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.30, delay: 0.3 },
+                  transition: { duration: 0.15 , delay: 0.3 },
                 }}
               />
             )}
@@ -43,7 +43,7 @@ export const FeatureCards = ({items}) => {
             className="bg-card border-emerald-900/20 hover:border-emerald-800/40 transition-all duration-300"
           >
             <CardHeader className="pb-2">
-              <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4">
+              <div className="bg-emerald-900/20 p-3 rounded-lg w-fit mb-4 hover:scale-110 hover:text-emerald-600">
                 {item.icon}
               </div>
               <CardTitle className="text-xl font-semibold text-white">
