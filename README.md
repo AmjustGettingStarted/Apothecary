@@ -86,9 +86,9 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## ✨ Screenshots
 
-[Home Page](/public/ss1.jpeg)
-[Home Page](/public/ss2.jpeg)
-[Home Page](/public/ss3.jpeg)
+![Home Page](/public/ss1.jpeg)
+![Price Plans Page](/public/ss2.jpeg)
+![Doctors List](/public/ss3.jpeg)
 
 ---
 
