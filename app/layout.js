@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
 
             <footer className="bg-[#1B1B1B] py-8">
               <div className="container mx-auto px-4 text-center text-gray-200 flex justify-center">
-                <p>© {format(new Date(), "yyyy")} || HMV || ConsultX</p>
+                <p>©{format(new Date(), "yyyy")} | HMV | ConsultX</p>
               </div>
             </footer>
           </ThemeProvider>
