@@ -13,8 +13,7 @@ export const DoctorsCards = ({items}) => {
     <div className={cn("grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2")}>
       {items.map((item, idx) => (
         <div
-         
-          key={item?.link}
+          key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
