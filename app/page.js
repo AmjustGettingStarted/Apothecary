@@ -8,6 +8,7 @@ import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 import { FeatureCards } from "@/components/feature-cards";
 import { AnimatedTestimonials } from "@/components/testimonial-card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function Home() {
   return (
@@ -130,6 +131,7 @@ export default function Home() {
             {/* Clerk Pricing Table */}
             <Pricing />
 
+            {/* FAQ maybe? */}
             {/* Description */}
             <Card className="mt-12 bg-muted/20 border-emerald-900/30">
               <CardHeader>
@@ -139,6 +141,26 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                <Accordion type="single" collapsible>
+                  {creditBenefits.map((benefit, index) => (
+                    <AccordionItem value={index + 1} key={index}>
+                      <AccordionTrigger className="hover:no-underline cursor-pointer">
+                        {benefit.question}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        {/* {benefit.answer} */}
+                     
+                          <p
+                            className="text-muted-foreground"
+                            dangerouslySetInnerHTML={{ __html: benefit.answer }}
+                          />
+                    
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+              {/* <CardContent>
                 <ul className="space-y-3">
                   {creditBenefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
@@ -165,7 +187,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </CardContent>
+              </CardContent> */}
             </Card>
           </div>
         </div>
@@ -191,7 +213,7 @@ export default function Home() {
 
           {/* Testimonials Cards */}
           <AnimatedTestimonials testimonials={testimonials} />
-          
+
           {/* Basic Grid 3 Cards */}
           {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
