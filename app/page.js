@@ -150,7 +150,7 @@ export default function Home() {
                       <AccordionContent>
                         {/* {benefit.answer} */}
                      
-                          <p
+                          <div
                             className="text-muted-foreground"
                             dangerouslySetInnerHTML={{ __html: benefit.answer }}
                           />
