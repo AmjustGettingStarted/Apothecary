@@ -205,7 +205,7 @@ export default function Home() {
               variant="outline"
               className="bg-emerald-900/30 border-emerald-700/30 px-4 py-1 text-emerald-400 text-sm font-medium mb-4"
             >
-              Success Stories...
+              Success Stories
             </Badge>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               What Our Users Say
