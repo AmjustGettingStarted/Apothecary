@@ -8,7 +8,12 @@ import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 import { FeatureCards } from "@/components/feature-cards";
 import { AnimatedTestimonials } from "@/components/testimonial-card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   return (
@@ -148,18 +153,17 @@ export default function Home() {
                         {benefit.question}
                       </AccordionTrigger>
                       <AccordionContent>
-                        {/* {benefit.answer} */}
-                     
-                          <p
-                            className="text-muted-foreground"
-                            dangerouslySetInnerHTML={{ __html: benefit.answer }}
-                          />
-                    
+                        <p
+                          className="text-muted-foreground"
+                          dangerouslySetInnerHTML={{ __html: benefit.answer }}
+                        />
                       </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
               </CardContent>
+
+              {/* Simple Display */}
               {/* <CardContent>
                 <ul className="space-y-3">
                   {creditBenefits.map((benefit, index) => (
