@@ -1,6 +1,6 @@
 # 🩺 ConsultX – Doctors Appointment Platform
 
-A modern, full-stack platform for booking, managing, and monetizing doctor appointments. Built with Next.js, Clerk authentication, and a robust credit-based system for patients and doctors
+A modern, full-stack platform for booking, managing, and monetizing doctor appointments. Built with Next.js, Clerk authentication, and a robust credit-based system for patients and doctors.
 
 ---
 
