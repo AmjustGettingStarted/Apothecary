@@ -8,7 +8,12 @@ import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 import { FeatureCards } from "@/components/feature-cards";
 import { AnimatedTestimonials } from "@/components/testimonial-card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   return (
@@ -22,7 +27,7 @@ export default function Home() {
                 variant="outline"
                 className="bg-emerald-900/30 border-emerald-700/30 px-4 py-2 text-emerald-400 text-sm font-medium"
               >
-                Healthcare made simple
+                Healthcare made simple.
               </Badge>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Connect with doctors <br />
@@ -53,14 +58,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
+            <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden object-contain">
               <Image
                 src="/banner.png"
                 alt="Doctor consultation"
                 width={3223}
                 height={2664}
                 priority
-                className="object-contain md:pt-14 rounded-xl"
+                className="object-cover md:pt-14 rounded-xl"
               />
             </div>
           </div>
@@ -143,23 +148,22 @@ export default function Home() {
               <CardContent>
                 <Accordion type="single" collapsible>
                   {creditBenefits.map((benefit, index) => (
-                    <AccordionItem value={index + 1} key={index}>
+                    <AccordionItem value={String(index)} key={index}>
                       <AccordionTrigger className="hover:no-underline cursor-pointer">
                         {benefit.question}
                       </AccordionTrigger>
                       <AccordionContent>
-                        {/* {benefit.answer} */}
-                     
-                          <div
-                            className="text-muted-foreground"
-                            dangerouslySetInnerHTML={{ __html: benefit.answer }}
-                          />
-                    
+                        <p
+                          className="text-muted-foreground"
+                          dangerouslySetInnerHTML={{ __html: benefit.answer }}
+                        />
                       </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
               </CardContent>
+
+              {/* Simple Display */}
               {/* <CardContent>
                 <ul className="space-y-3">
                   {creditBenefits.map((benefit, index) => (
