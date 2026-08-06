@@ -3,6 +3,7 @@
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { doctorFormSchema } from "@/lib/schema";
 
 /**
  * Sets the user's role and related information
@@ -11,7 +12,7 @@ export async function setUserRole(formData) {
   const { userId } = await auth();
 
   if (!userId) {
-    throw new Error("Unauthorized");
+    return { success: false, errors: { form: "Unauthorized" } };
   }
 
   // Find user in our database
@@ -19,12 +20,14 @@ export async function setUserRole(formData) {
     where: { clerkUserId: userId },
   });
 
-  if (!user) throw new Error("User not found in database");
+  if (!user) {
+    return { success: false, errors: { form: "User not found in database" } };
+  }
 
   const role = formData.get("role");
 
   if (!role || !["PATIENT", "DOCTOR"].includes(role)) {
-    throw new Error("Invalid role selection");
+    return { success: false, errors: { role: "Invalid role selection" } };
   }
 
   try {
@@ -45,15 +48,23 @@ export async function setUserRole(formData) {
 
     // For doctor role - need additional information
     if (role === "DOCTOR") {
-      const specialty = formData.get("specialty");
-      const experience = parseInt(formData.get("experience"), 10);
-      const credentialUrl = formData.get("credentialUrl");
-      const description = formData.get("description");
+      const payload = {
+        specialty: formData.get("specialty")?.toString() ?? "",
+        experience: formData.get("experience"),
+        credentialUrl: formData.get("credentialUrl")?.toString() ?? "",
+        description: formData.get("description")?.toString() ?? "",
+      };
 
-      // Validate inputs
-      if (!specialty || !experience || !credentialUrl || !description) {
-        throw new Error("All fields are required");
+      const parseResult = doctorFormSchema.safeParse(payload);
+
+      if (!parseResult.success) {
+        return {
+          success: false,
+          errors: parseResult.error.flatten().fieldErrors,
+        };
       }
+
+      const { specialty, experience, credentialUrl, description } = parseResult.data;
 
       await db.user.update({
         where: {
@@ -74,7 +85,7 @@ export async function setUserRole(formData) {
     }
   } catch (error) {
     console.error("Failed to set user role:", error);
-    throw new Error(`Failed to update user profile: ${error.message}`);
+    return { success: false, errors: { form: error.message ?? "Failed to update user profile" } };
   }
 }
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Card,
@@ -39,21 +39,19 @@ export default function OnboardingPage() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
-    setValue,
-    watch,
+    setError,
   } = useForm({
     resolver: zodResolver(doctorFormSchema),
     defaultValues: {
       specialty: "",
-      experience: undefined,
+      experience: "",
       credentialUrl: "",
       description: "",
     },
+    shouldUnregister: false,
   });
-
-  // Watch specialty value for controlled select component
-  const specialtyValue = watch("specialty");
 
   // Handle patient role selection
   const handlePatientSelection = async () => {
@@ -71,18 +69,32 @@ export default function OnboardingPage() {
     }
   }, [data]);
 
-  // Added missing onDoctorSubmit function
+  // Handle doctor registration submit and server-side validation errors
   const onDoctorSubmit = async (data) => {
     if (loading) return;
 
     const formData = new FormData();
     formData.append("role", "DOCTOR");
-    formData.append("specialty", data.specialty);
-    formData.append("experience", data.experience.toString());
-    formData.append("credentialUrl", data.credentialUrl);
-    formData.append("description", data.description);
+    formData.append("specialty", String(data.specialty ?? ""));
+    formData.append("experience", String(data.experience ?? ""));
+    formData.append("credentialUrl", String(data.credentialUrl ?? ""));
+    formData.append("description", String(data.description ?? ""));
 
-    await submitUserRole(formData);
+    const response = await submitUserRole(formData);
+
+    if (response?.success === false && response.errors) {
+      Object.entries(response.errors).forEach(([field, messages]) => {
+        const message = Array.isArray(messages) ? messages[0] : messages;
+
+        if (field === "form") {
+          return;
+        }
+
+        setError(field, { type: "server", message });
+      });
+
+      return;
+    }
   };
 
   // Role selection screen
@@ -164,26 +176,29 @@ export default function OnboardingPage() {
           <form onSubmit={handleSubmit(onDoctorSubmit)} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="specialty">Medical Specialty</Label>
-              <Select
-                value={specialtyValue}
-                onValueChange={(value) => setValue("specialty", value)}
-              >
-                <SelectTrigger id="specialty">
-                  <SelectValue placeholder="Select your specialty" />
-                </SelectTrigger>
-                <SelectContent>
-                  {SPECIALTIES.map((spec) => (
-                    <SelectItem
-                      key={spec.name}
-                      value={spec.name}
-                      className="flex items-center gap-2"
-                    >
-                      <span className="text-emerald-400">{spec.icon}</span>
-                      {spec.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Controller
+                control={control}
+                name="specialty"
+                render={({ field }) => (
+                  <Select value={field.value} onValueChange={field.onChange}>
+                    <SelectTrigger id="specialty">
+                      <SelectValue placeholder="Select your specialty" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {SPECIALTIES.map((spec) => (
+                        <SelectItem
+                          key={spec.name}
+                          value={spec.name}
+                          className="flex items-center gap-2"
+                        >
+                          <span className="text-emerald-400">{spec.icon}</span>
+                          {spec.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                )}
+              />
               {errors.specialty && (
                 <p className="text-sm font-medium text-red-500 mt-1">
                   {errors.specialty.message}
