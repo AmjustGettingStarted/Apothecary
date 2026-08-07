@@ -49,7 +49,7 @@ export default function Home() {
             </Badge>
 
             {/* Headline with 14px added breathability */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col gap-3.5">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col ">
               <span>
                 Connect <br /> with doctors
               </span>
