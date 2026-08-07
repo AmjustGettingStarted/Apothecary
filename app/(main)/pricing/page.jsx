@@ -13,7 +13,7 @@ export default async function PricingPage() {
       <div className="flex justify-start mb-2">
         <Link
           href="/"
-          className="flex items-center text-muted-foreground hover:text-white transition-colors"
+          className="flex items-center text-muted-foreground cursor-pointer hover:text-white transition-colors"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Home

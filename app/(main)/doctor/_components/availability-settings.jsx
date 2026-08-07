@@ -44,7 +44,7 @@ export function AvailabilitySettings({ slots }) {
       now.getMonth(),
       now.getDate(),
       hours,
-      minutes
+      minutes,
     );
     return date;
   }
@@ -141,7 +141,7 @@ export function AvailabilitySettings({ slots }) {
 
             <Button
               onClick={() => setShowForm(true)}
-              className="w-full bg-emerald-600 hover:bg-emerald-700"
+              className="w-full bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
             >
               <Plus className="h-4 w-4 mr-2" />
               Set Availability Time
@@ -196,14 +196,14 @@ export function AvailabilitySettings({ slots }) {
                 variant="outline"
                 onClick={() => setShowForm(false)}
                 disabled={loading}
-                className="border-emerald-900/30"
+                className="border-emerald-900/30 cursor-pointer"
               >
                 Cancel
               </Button>
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
               >
                 {loading ? (
                   <>

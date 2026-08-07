@@ -71,7 +71,7 @@ export default function VideoCall({ sessionId, token }) {
             if (error) {
               toast.error("Error connecting to other participant's stream");
             }
-          }
+          },
         );
       });
 
@@ -96,10 +96,10 @@ export default function VideoCall({ sessionId, token }) {
               toast.error("Error initializing your camera and microphone");
             } else {
               console.log(
-                "Publisher initialized successfully - you should see your video now"
+                "Publisher initialized successfully - you should see your video now",
               );
             }
-          }
+          },
         );
       });
 
@@ -187,7 +187,7 @@ export default function VideoCall({ sessionId, token }) {
         </p>
         <Button
           onClick={() => router.push("/appointments")}
-          className="bg-emerald-600 hover:bg-emerald-700"
+          className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
         >
           Back to Appointments
         </Button>
@@ -215,8 +215,8 @@ export default function VideoCall({ sessionId, token }) {
             {isConnected
               ? "Connected"
               : isLoading
-              ? "Connecting..."
-              : "Connection failed"}
+                ? "Connecting..."
+                : "Connection failed"}
           </p>
         </div>
 

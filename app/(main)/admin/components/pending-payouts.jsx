@@ -130,7 +130,7 @@ export function PendingPayouts({ payouts }) {
                             Requested{" "}
                             {format(
                               new Date(payout.createdAt),
-                              "MMM d, yyyy 'at' h:mm a"
+                              "MMM d, yyyy 'at' h:mm a",
                             )}
                           </p>
                         </div>
@@ -147,14 +147,14 @@ export function PendingPayouts({ payouts }) {
                             variant="outline"
                             size="sm"
                             onClick={() => handleViewDetails(payout)}
-                            className="border-emerald-900/30 hover:bg-muted/80"
+                            className="border-emerald-900/30 hover:bg-muted/80 cursor-pointer"
                           >
                             View Details
                           </Button>
                           <Button
                             size="sm"
                             onClick={() => handleApprovePayout(payout)}
-                            className="bg-emerald-600 hover:bg-emerald-700"
+                            className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
                           >
                             <Check className="h-4 w-4 mr-1" />
                             Approve
@@ -288,7 +288,7 @@ export function PendingPayouts({ payouts }) {
               <Button
                 variant="outline"
                 onClick={closeDialogs}
-                className="border-emerald-900/30"
+                className="border-emerald-900/30 cursor-pointer"
               >
                 Close
               </Button>
@@ -297,7 +297,7 @@ export function PendingPayouts({ payouts }) {
                 disabled={
                   selectedPayout.doctor.credits < selectedPayout.credits
                 }
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
               >
                 <Check className="h-4 w-4 mr-1" />
                 Approve Payout
@@ -368,14 +368,14 @@ export function PendingPayouts({ payouts }) {
                 variant="outline"
                 onClick={() => setShowApproveDialog(false)}
                 disabled={loading}
-                className="border-emerald-900/30"
+                className="border-emerald-900/30 cursor-pointer"
               >
                 Cancel
               </Button>
               <Button
                 onClick={confirmApproval}
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
               >
                 {loading ? (
                   <>

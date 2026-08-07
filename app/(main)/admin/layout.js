@@ -30,21 +30,21 @@ export default async function AdminLayout({ children }) {
         <TabsList className="md:col-span-1 bg-muted/30 border h-14 md:h-40 flex sm:flex-row md:flex-col w-full p-2 md:p-1 rounded-md md:space-y-2 sm:space-x-2 md:space-x-0">
           <TabsTrigger
             value="pending"
-            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
           >
             <AlertCircle className="h-4 w-4 mr-2 hidden md:inline" />
             <span>Pending Verification</span>
           </TabsTrigger>
           <TabsTrigger
             value="doctors"
-            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
           >
             <Users className="h-4 w-4 mr-2 hidden md:inline" />
             <span>Doctors</span>
           </TabsTrigger>
           <TabsTrigger
             value="payouts"
-            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+            className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
           >
             <CreditCard className="h-4 w-4 mr-2 hidden md:inline" />
             <span>Payouts</span>

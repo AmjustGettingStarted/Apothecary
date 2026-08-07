@@ -37,21 +37,21 @@ export default async function DoctorDashboardPage() {
       <TabsList className="md:col-span-1 bg-muted/30 border h-14 md:h-40 flex sm:flex-row md:flex-col w-full p-2 md:p-1 rounded-md md:space-y-2 sm:space-x-2 md:space-x-0">
         <TabsTrigger
           value="earnings"
-          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
         >
           <DollarSign className="h-4 w-4 mr-2 hidden md:inline" />
           <span>Earnings</span>
         </TabsTrigger>
         <TabsTrigger
           value="appointments"
-          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
         >
           <Calendar className="h-4 w-4 mr-2 hidden md:inline" />
           <span>Appointments</span>
         </TabsTrigger>
         <TabsTrigger
           value="availability"
-          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
+          className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full cursor-pointer"
         >
           <Clock className="h-4 w-4 mr-2 hidden md:inline" />
           <span>Availability</span>

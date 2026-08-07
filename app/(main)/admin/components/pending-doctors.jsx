@@ -113,7 +113,7 @@ export function PendingDoctors({ doctors }) {
                           variant="outline"
                           size="sm"
                           onClick={() => handleViewDetails(doctor)}
-                          className="border-emerald-900/30 hover:bg-muted/80"
+                          className="border-emerald-900/30 hover:bg-muted/80 cursor-pointer"
                         >
                           View Details
                         </Button>
@@ -242,7 +242,7 @@ export function PendingDoctors({ doctors }) {
                   handleUpdateStatus(selectedDoctor.id, "REJECTED")
                 }
                 disabled={loading}
-                className="bg-red-600 hover:bg-red-700"
+                className="bg-red-600 hover:bg-red-700 cursor-pointer"
               >
                 <X className="mr-2 h-4 w-4" />
                 Reject
@@ -252,7 +252,7 @@ export function PendingDoctors({ doctors }) {
                   handleUpdateStatus(selectedDoctor.id, "VERIFIED")
                 }
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
               >
                 <Check className="mr-2 h-4 w-4" />
                 Approve
