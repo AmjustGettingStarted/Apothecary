@@ -36,9 +36,13 @@ export default function RootLayout({ children }) {
             <main className="min-h-screen">{children}</main>
             <Toaster richColors />
 
-            <footer className="bg-[#1B1B1B] py-8">
-              <div className="container mx-auto px-4 text-center text-gray-200 flex justify-center">
-                <p>©{format(new Date(), "yyyy")} | HMV | ConsultX</p>
+            <footer className="bg-[#050B08] border-t border-white/5 py-8">
+              <div className="container mx-auto px-4 text-center text-muted-foreground/60 text-sm flex justify-center items-center">
+                <p>
+                  ©{format(new Date(), "yyyy")}{" "}
+                  <span className="text-emerald-500/40 mx-1.5">|</span> HMV{" "}
+                  <span className="text-emerald-500/40 mx-1.5">|</span> ConsultX
+                </p>
               </div>
             </footer>
           </ThemeProvider>
