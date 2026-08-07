@@ -40,7 +40,7 @@ export function VerifiedDoctors({ doctors }) {
     const confirmed = window.confirm(
       `Are you sure you want to ${suspend ? "suspend" : "reinstate"} ${
         doctor.name
-      }?`
+      }?`,
     );
     if (!confirmed || loading) return;
 
@@ -139,7 +139,7 @@ export function VerifiedDoctors({ doctors }) {
                                   handleStatusChange(doctor, false)
                                 }
                                 disabled={loading}
-                                className="border-emerald-900/30 hover:bg-muted/80"
+                                className="border-emerald-900/30 hover:bg-muted/80 cursor-pointer"
                               >
                                 {loading && targetDoctor?.id === doctor.id ? (
                                   <Loader2 className="h-4 w-4 mr-1 animate-spin" />
@@ -162,7 +162,7 @@ export function VerifiedDoctors({ doctors }) {
                                 size="sm"
                                 onClick={() => handleStatusChange(doctor, true)}
                                 disabled={loading}
-                                className="border-red-900/30 hover:bg-red-900/10 text-red-400"
+                                className="border-red-900/30 hover:bg-red-900/10 text-red-400 cursor-pointer"
                               >
                                 {loading && targetDoctor?.id === doctor.id ? (
                                   <Loader2 className="h-4 w-4 mr-1 animate-spin" />

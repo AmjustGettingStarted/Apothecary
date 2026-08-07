@@ -41,7 +41,7 @@ export default async function Header() {
               <Link href="/admin">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center cursor-pointer gap-2"
                 >
                   <ShieldCheck className="h-4 w-4" />
                   Admin Dashboard
@@ -57,12 +57,15 @@ export default async function Header() {
               <Link href="/doctor">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Stethoscope className="h-4 w-4" />
                   Doctor Dashboard
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button
+                  variant="ghost"
+                  className="md:hidden w-10 h-10 p-0 cursor-pointer"
+                >
                   <Stethoscope className="h-4 w-4" />
                 </Button>
               </Link>
@@ -73,12 +76,15 @@ export default async function Header() {
               <Link href="/appointments">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2"
+                  className="hidden md:inline-flex items-center gap-2 cursor-pointer"
                 >
                   <Calendar className="h-4 w-4" />
                   My Appointments
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button
+                  variant="ghost"
+                  className="md:hidden w-10 h-10 p-0 cursor-pointer"
+                >
                   <Calendar className="h-4 w-4" />
                 </Button>
               </Link>
@@ -94,7 +100,10 @@ export default async function Header() {
                   <User className="h-4 w-4" />
                   Complete Profile
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button
+                  variant="ghost"
+                  className="md:hidden w-10 h-10 p-0 cursor-pointer"
+                >
                   <User className="h-4 w-4" />
                 </Button>
               </Link>

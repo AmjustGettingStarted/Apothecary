@@ -101,7 +101,7 @@ export function AppointmentCard({
 
     if (
       window.confirm(
-        "Are you sure you want to cancel this appointment? This action cannot be undone."
+        "Are you sure you want to cancel this appointment? This action cannot be undone.",
       )
     ) {
       const formData = new FormData();
@@ -120,14 +120,14 @@ export function AppointmentCard({
 
     if (now < appointmentEndTime) {
       alert(
-        "Cannot mark appointment as completed before the scheduled end time."
+        "Cannot mark appointment as completed before the scheduled end time.",
       );
       return;
     }
 
     if (
       window.confirm(
-        "Are you sure you want to mark this appointment as completed? This action cannot be undone."
+        "Are you sure you want to mark this appointment as completed? This action cannot be undone.",
       )
     ) {
       const formData = new FormData();
@@ -198,7 +198,7 @@ export function AppointmentCard({
     if (tokenData?.success) {
       // Redirect to video call page with token and session ID
       router.push(
-        `/video-call?sessionId=${tokenData.videoSessionId}&token=${tokenData.token}&appointmentId=${appointment.id}`
+        `/video-call?sessionId=${tokenData.videoSessionId}&token=${tokenData.token}&appointmentId=${appointment.id}`,
       );
     } else if (tokenData?.error) {
       setAction(null);
@@ -271,8 +271,8 @@ export function AppointmentCard({
                   appointment.status === "COMPLETED"
                     ? "bg-emerald-900/20 border-emerald-900/30 text-emerald-400"
                     : appointment.status === "CANCELLED"
-                    ? "bg-red-900/20 border-red-900/30 text-red-400"
-                    : "bg-amber-900/20 border-amber-900/30 text-amber-400"
+                      ? "bg-red-900/20 border-red-900/30 text-red-400"
+                      : "bg-amber-900/20 border-amber-900/30 text-amber-400"
                 }
               >
                 {appointment.status}
@@ -283,7 +283,7 @@ export function AppointmentCard({
                     size="sm"
                     onClick={handleMarkCompleted}
                     disabled={completeLoading}
-                    className="bg-emerald-600 hover:bg-emerald-700"
+                    className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
                   >
                     {completeLoading ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -298,7 +298,7 @@ export function AppointmentCard({
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-emerald-900/30"
+                  className="border-emerald-900/30 cursor-pointer"
                   onClick={() => setOpen(true)}
                 >
                   View Details
@@ -386,8 +386,8 @@ export function AppointmentCard({
                   appointment.status === "COMPLETED"
                     ? "bg-emerald-900/20 border-emerald-900/30 text-emerald-400"
                     : appointment.status === "CANCELLED"
-                    ? "bg-red-900/20 border-red-900/30 text-red-400"
-                    : "bg-amber-900/20 border-amber-900/30 text-amber-400"
+                      ? "bg-red-900/20 border-red-900/30 text-red-400"
+                      : "bg-amber-900/20 border-amber-900/30 text-amber-400"
                 }
               >
                 {appointment.status}
@@ -417,7 +417,7 @@ export function AppointmentCard({
                   Video Consultation
                 </h4>
                 <Button
-                  className="w-full bg-emerald-600 hover:bg-emerald-700"
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
                   disabled={
                     !isAppointmentActive() || action === "video" || tokenLoading
                   }
@@ -453,7 +453,7 @@ export function AppointmentCard({
                       variant="ghost"
                       size="sm"
                       onClick={() => setAction("notes")}
-                      className="h-7 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-900/20"
+                      className="h-7 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-900/20 cursor-pointer"
                     >
                       <Edit className="h-3.5 w-3.5 mr-1" />
                       {appointment.notes ? "Edit" : "Add"}
@@ -479,7 +479,7 @@ export function AppointmentCard({
                         setNotes(appointment.notes || "");
                       }}
                       disabled={notesLoading}
-                      className="border-emerald-900/30"
+                      className="border-emerald-900/30 cursor-pointer"
                     >
                       Cancel
                     </Button>
@@ -487,7 +487,7 @@ export function AppointmentCard({
                       size="sm"
                       onClick={handleSaveNotes}
                       disabled={notesLoading}
-                      className="bg-emerald-600 hover:bg-emerald-700"
+                      className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
                     >
                       {notesLoading ? (
                         <>
@@ -523,7 +523,7 @@ export function AppointmentCard({
                 <Button
                   onClick={handleMarkCompleted}
                   disabled={completeLoading}
-                  className="bg-emerald-600 hover:bg-emerald-700"
+                  className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
                 >
                   {completeLoading ? (
                     <>
@@ -545,7 +545,7 @@ export function AppointmentCard({
                   variant="outline"
                   onClick={handleCancelAppointment}
                   disabled={cancelLoading}
-                  className="border-red-900/30 text-red-400 hover:bg-red-900/10 mt-3 sm:mt-0"
+                  className="border-red-900/30 text-red-400 hover:bg-red-900/10 mt-3 sm:mt-0 cursor-pointer"
                 >
                   {cancelLoading ? (
                     <>
@@ -564,7 +564,7 @@ export function AppointmentCard({
 
             <Button
               onClick={() => setOpen(false)}
-              className="bg-emerald-600 hover:bg-emerald-700"
+              className="bg-emerald-600 hover:bg-emerald-700 cursor-pointer"
             >
               Close
             </Button>
