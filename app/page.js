@@ -19,8 +19,8 @@ import { CTASection } from "@/components/cta-section";
 export default function Home() {
   return (
     <div className="bg-[#050B08] text-white">
-      {/* Hero Section - 100vh Full Screen */}
-      <section className="relative min-h-screen w-full flex items-center overflow-hidden py-20 lg:py-0">
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full flex items-center overflow-hidden pt-28 pb-16 lg:py-0">
         {/* Background Image Setup */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -28,28 +28,28 @@ export default function Home() {
             alt="Doctor consultation visual background"
             fill
             priority
-            className="object-cover object-center lg:object-[80%_center] opacity-30 sm:opacity-40 lg:opacity-100 transition-opacity duration-300 pointer-events-none"
+            className="object-cover object-[70%_center] lg:object-[80%_center] opacity-50 sm:opacity-60 lg:opacity-100 transition-opacity duration-300 pointer-events-none"
           />
 
-          {/* Left-to-right gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050B08] via-[#050B08]/85 to-transparent lg:w-[60%]" />
+          {/* Gradient Overlay: Soft top-to-bottom dark gradient on mobile, left-to-right on desktop */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050B08]/90 via-[#050B08]/70 to-[#050B08] lg:bg-gradient-to-r lg:from-[#050B08] lg:via-[#050B08]/85 lg:to-transparent lg:w-[60%]" />
 
-          {/* NEW: Bottom gradient blending smoothly into bg-emerald-950/10 */}
+          {/* Bottom gradient blending smoothly into next section */}
           <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#06160e] via-[#06160e]/70 to-transparent pointer-events-none" />
         </div>
 
-        {/* Content Container - 50% width balance */}
+        {/* Content Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-xl lg:max-w-[50%] space-y-8">
+          <div className="max-w-xl lg:max-w-[50%] space-y-6 sm:space-y-8">
             <Badge
               variant="outline"
-              className="bg-emerald-950/40 border-emerald-500/30 px-4 py-1.5 text-emerald-400 text-sm font-medium rounded-full"
+              className="bg-emerald-950/60 backdrop-blur-md border-emerald-500/30 px-4 py-1.5 text-emerald-400 text-sm font-medium rounded-full"
             >
               Healthcare made simple.
             </Badge>
 
-            {/* Headline with 14px added breathability */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col ">
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col">
               <span>
                 Connect <br /> with doctors
               </span>
@@ -58,18 +58,18 @@ export default function Home() {
               </span>
             </h1>
 
-            {/* Paragraph Capped at ~500px width */}
-            <p className="text-emerald-100/70 text-lg md:text-xl max-w-[500px] font-normal leading-relaxed">
+            {/* Paragraph */}
+            <p className="text-emerald-100/80 text-lg md:text-xl max-w-[500px] font-normal leading-relaxed drop-shadow-sm">
               Book appointments, consult via video, and manage your healthcare
               journey all in one secure platform.
             </p>
 
-            {/* Styled Action Buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <Button
                 asChild
                 size="lg"
-                className="bg-[#20e28f] hover:bg-[#1bc77d] text-black font-semibold rounded-full px-8 py-6 text-base transition-all duration-200 shadow-lg shadow-emerald-500/10"
+                className="bg-[#20e28f] hover:bg-[#1bc77d] text-black font-semibold rounded-full px-8 py-6 text-base transition-all duration-200 shadow-lg shadow-emerald-500/20"
               >
                 <Link
                   href="/onboarding"
@@ -84,7 +84,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="bg-black/40 border-white/10 hover:border-white/20 hover:bg-black/60 text-white font-medium rounded-full px-8 py-6 text-base backdrop-blur-sm transition-all duration-200"
+                className="bg-black/60 border-white/15 hover:border-white/30 hover:bg-black/80 text-white font-medium rounded-full px-8 py-6 text-base backdrop-blur-md transition-all duration-200"
               >
                 <Link
                   href="/doctors"
