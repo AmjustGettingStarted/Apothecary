@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Search, Stethoscope } from "lucide-react";
+import { ArrowRight, Search, Stethoscope, Sparkles, Shield, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,85 +14,156 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CTASection } from "@/components/cta-section";
+import { RadialCarousel } from "@/components/radial-carousel";
+
+const heroSpecialists = [
+  {
+    id: "dr-downey",
+    title: "Dr. Robert Downey",
+    url: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-suma",
+    title: "Dr. Suma M",
+    url: "https://images.pexels.com/photos/8376277/pexels-photo-8376277.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-vikram",
+    title: "Dr. Vikram Rao",
+    url: "https://images.pexels.com/photos/5722157/pexels-photo-5722157.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-aditi",
+    title: "Dr. Aditi Sharma",
+    url: "https://plus.unsplash.com/premium_photo-1664475450083-5c9eef17a191?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "dr-keerthana",
+    title: "Dr. Keerthana",
+    url: "https://plus.unsplash.com/premium_photo-1682089874677-3eee554feb19?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    id: "dr-ethan",
+    title: "Dr. Ethan Hall",
+    url: "https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-sarah",
+    title: "Dr. Sarah Jenkins",
+    url: "https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-michael",
+    title: "Dr. Michael Chang",
+    url: "https://images.pexels.com/photos/6234634/pexels-photo-6234634.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-elena",
+    title: "Dr. Elena Gomez",
+    url: "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    id: "dr-david",
+    title: "Dr. David Kim",
+    url: "https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+];
 
 export default function Home() {
   return (
     <div className="bg-[#050B08] text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex items-center overflow-hidden pt-28 pb-16 lg:py-0">
-        {/* Background Image Setup */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/banner.png"
-            alt="Doctor consultation visual background"
-            fill
-            priority
-            className="object-cover object-[70%_center] lg:object-[80%_center] opacity-50 sm:opacity-60 lg:opacity-100 transition-opacity duration-300 pointer-events-none"
-          />
-
-          {/* Gradient Overlay: Soft top-to-bottom dark gradient on mobile, left-to-right on desktop */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050B08]/90 via-[#050B08]/70 to-[#050B08] lg:bg-gradient-to-r lg:from-[#050B08] lg:via-[#050B08]/85 lg:to-transparent lg:w-[60%]" />
-
-          {/* Bottom gradient blending smoothly into next section */}
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#06160e] via-[#06160e]/70 to-transparent pointer-events-none" />
+      <section className="relative min-h-screen w-full flex items-center overflow-hidden pt-28 pb-16 lg:py-12">
+        {/* Modern Ambient Mesh Lighting & Glows */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-2/3 w-[600px] h-[600px] rounded-full bg-emerald-500/10 blur-[140px]" />
+          <div className="absolute -top-20 -left-20 w-[450px] h-[450px] rounded-full bg-emerald-600/10 blur-[120px]" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050B08] to-transparent" />
         </div>
 
         {/* Content Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-xl lg:max-w-[50%] space-y-6 sm:space-y-8">
-            <Badge
-              variant="outline"
-              className="bg-emerald-950/60 backdrop-blur-md border-emerald-500/30 px-4 py-1.5 text-emerald-400 text-sm font-medium rounded-full"
-            >
-              Healthcare made simple.
-            </Badge>
-
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col">
-              <span>
-                Connect <br /> with doctors
-              </span>
-              <span className="text-emerald-400 font-normal">
-                Anytime, Anywhere
-              </span>
-            </h1>
-
-            {/* Paragraph */}
-            <p className="text-emerald-100/80 text-lg md:text-xl max-w-[500px] font-normal leading-relaxed drop-shadow-sm">
-              Book appointments, consult via video, and manage your healthcare
-              journey all in one secure platform.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[#20e28f] hover:bg-[#1bc77d] text-black font-semibold rounded-full px-8 py-6 text-base transition-all duration-200 shadow-lg shadow-emerald-500/20"
-              >
-                <Link
-                  href="/onboarding"
-                  className="flex items-center justify-center gap-2"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+            {/* Left Column: Headlines & CTA */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8 text-center lg:text-left">
+              <div className="flex justify-center lg:justify-start">
+                <Badge
+                  variant="outline"
+                  className="bg-emerald-950/60 backdrop-blur-md border-emerald-500/30 px-4 py-1.5 text-emerald-400 text-sm font-medium rounded-full inline-flex items-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
                 >
-                  Get Started
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
+                  <Sparkles className="h-3.5 w-3.5 text-emerald-400 animate-pulse" />
+                  Healthcare made simple.
+                </Badge>
+              </div>
 
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="bg-black/60 border-white/15 hover:border-white/30 hover:bg-black/80 text-white font-medium rounded-full px-8 py-6 text-base backdrop-blur-md transition-all duration-200"
-              >
-                <Link
-                  href="/doctors"
-                  className="flex items-center justify-center gap-2"
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.1] flex flex-col">
+                <span>
+                  Connect <br className="hidden sm:block" /> with doctors
+                </span>
+                <span className="text-emerald-400 font-normal mt-1">
+                  Anytime, Anywhere
+                </span>
+              </h1>
+
+              {/* Paragraph */}
+              <p className="text-emerald-100/80 text-lg md:text-xl max-w-[540px] mx-auto lg:mx-0 font-normal leading-relaxed drop-shadow-sm">
+                Book appointments, consult via high-definition video, and manage
+                your family&apos;s healthcare journey all in one secure platform.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 pt-2">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-[#20e28f] hover:bg-[#1bc77d] text-black font-semibold rounded-full px-8 py-6 text-base transition-all duration-200 shadow-lg shadow-emerald-500/20 cursor-pointer hover:scale-105"
                 >
-                  <Search className="h-4 w-4 text-emerald-400" />
-                  Find Doctors
-                </Link>
-              </Button>
+                  <Link
+                    href="/onboarding"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    Get Started
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="bg-black/60 border-white/15 hover:border-white/30 hover:bg-black/80 text-white font-medium rounded-full px-8 py-6 text-base backdrop-blur-md transition-all duration-200 cursor-pointer hover:scale-105"
+                >
+                  <Link
+                    href="/doctors"
+                    className="flex items-center justify-center gap-2"
+                  >
+                    <Search className="h-4 w-4 text-emerald-400" />
+                    Find Doctors
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Key Trust Stats Pill Bar */}
+              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-neutral-300/80 border-t border-white/10">
+                <div className="flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-emerald-400" />
+                  <span>100% Verified Doctors</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-emerald-400" />
+                  <span>Instant 24/7 Booking</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-emerald-400" />
+                  <span>5,000+ Consultations</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Radial Carousel Hub */}
+            <div className="lg:col-span-6 flex items-center justify-center relative w-full">
+              <RadialCarousel items={heroSpecialists} />
             </div>
           </div>
         </div>
