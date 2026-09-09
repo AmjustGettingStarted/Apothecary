@@ -28,9 +28,8 @@ const DoctorAvatar = ({ src, name, status = "online" }) => (
         className="w-9 h-9 rounded-full object-cover border-2 border-emerald-500/40"
       />
       <span
-        className={`absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border-2 border-neutral-900 ${
-          status === "online" ? "bg-emerald-400" : "bg-neutral-500"
-        } shadow-[0_0_6px_rgba(16,185,129,0.8)]`}
+        className={`absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full border-2 border-neutral-900 ${status === "online" ? "bg-emerald-400" : "bg-neutral-500"
+          } shadow-[0_0_6px_rgba(16,185,129,0.8)]`}
       />
     </div>
     <div>
@@ -51,11 +50,10 @@ const StatPill = ({ label, value, color = "emerald" }) => (
 
 const Tag = ({ label, active }) => (
   <span
-    className={`px-2.5 py-1 rounded-full text-[11px] font-medium border transition-all ${
-      active
-        ? "bg-emerald-500 text-black border-emerald-400"
-        : "bg-white/5 text-neutral-400 border-white/10"
-    }`}
+    className={`px-2.5 py-1 rounded-full text-[11px] font-medium border transition-all ${active
+      ? "bg-emerald-500 text-black border-emerald-400"
+      : "bg-white/5 text-neutral-400 border-white/10"
+      }`}
   >
     {label}
   </span>
@@ -108,9 +106,8 @@ const BookingMockup = () => (
         <div className="text-right">
           <p className="text-xs text-emerald-300 font-medium">{d.time}</p>
           <span
-            className={`text-[9px] px-1.5 py-0.5 rounded-full font-medium ${
-              d.avail ? "bg-emerald-500/20 text-emerald-400" : "bg-white/10 text-neutral-500"
-            }`}
+            className={`text-[9px] px-1.5 py-0.5 rounded-full font-medium ${d.avail ? "bg-emerald-500/20 text-emerald-400" : "bg-white/10 text-neutral-500"
+              }`}
           >
             {d.avail ? "Available" : "Full"}
           </span>
@@ -122,31 +119,15 @@ const BookingMockup = () => (
 
 const VideoMockup = () => (
   <div className="mt-4 space-y-3">
-    <div className="relative rounded-xl overflow-hidden bg-neutral-950 border border-white/10 aspect-video flex items-center justify-center">
+    <div className="relative overflow-hidden aspect-video flex items-center justify-center">
       <img
-        src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=300"
+        src="/dr.robert.png"
         alt="Dr. Robert"
-        className="w-full h-full object-cover opacity-70"
+        className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-      <div className="absolute bottom-2 left-2 flex items-center gap-1.5">
-        <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-        <span className="text-[10px] text-white font-semibold">LIVE • 12:34</span>
-      </div>
-      <div className="absolute top-2 right-2 bg-black/60 backdrop-blur-md rounded-lg px-2 py-1 flex items-center gap-1.5">
-        <Video className="w-3 h-3 text-emerald-400" />
-        <span className="text-[10px] text-white">HD</span>
-      </div>
     </div>
     <div className="flex items-center justify-between">
       <p className="text-xs text-white font-medium">Dr. Robert Downey</p>
-      <div className="flex gap-2">
-        {["🎤", "📷", "📞"].map((e, i) => (
-          <button key={i} className="w-7 h-7 rounded-full bg-white/10 hover:bg-emerald-500/30 border border-white/10 text-xs transition-all flex items-center justify-center">
-            {e}
-          </button>
-        ))}
-      </div>
     </div>
   </div>
 );
@@ -312,11 +293,10 @@ export const FeatureCards = () => {
         return (
           <motion.div
             key={f.id}
-            className={`relative rounded-2xl border bg-neutral-950/70 backdrop-blur-xl overflow-hidden flex flex-col p-5 transition-all duration-300 cursor-default ${f.span} ${
-              isHovered
-                ? "border-emerald-500/50 shadow-[0_0_30px_rgba(16,185,129,0.18)]"
-                : "border-white/8 shadow-xl"
-            }`}
+            className={`relative rounded-2xl border bg-neutral-950/70 backdrop-blur-xl overflow-hidden flex flex-col p-5 transition-all duration-300 cursor-default ${f.span} ${isHovered
+              ? "border-emerald-500/50 shadow-[0_0_30px_rgba(16,185,129,0.18)]"
+              : "border-white/8 shadow-xl"
+              }`}
             onMouseEnter={() => setHovered(f.id)}
             onMouseLeave={() => setHovered(null)}
             initial={{ opacity: 0, y: 24 }}
@@ -341,11 +321,10 @@ export const FeatureCards = () => {
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-3">
                 <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 ${
-                    isHovered
-                      ? "bg-emerald-500/20 border-emerald-500/50 shadow-[0_0_16px_rgba(16,185,129,0.3)]"
-                      : "bg-white/[0.06] border-white/10"
-                  }`}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-all duration-300 ${isHovered
+                    ? "bg-emerald-500/20 border-emerald-500/50 shadow-[0_0_16px_rgba(16,185,129,0.3)]"
+                    : "bg-white/[0.06] border-white/10"
+                    }`}
                 >
                   <Icon className={`w-4.5 h-4.5 transition-colors duration-300 ${isHovered ? "text-emerald-400" : "text-neutral-400"}`} />
                 </div>
@@ -354,9 +333,8 @@ export const FeatureCards = () => {
                 </span>
               </div>
               <ArrowUpRight
-                className={`w-4 h-4 transition-all duration-300 ${
-                  isHovered ? "text-emerald-400 translate-x-0.5 -translate-y-0.5" : "text-neutral-700"
-                }`}
+                className={`w-4 h-4 transition-all duration-300 ${isHovered ? "text-emerald-400 translate-x-0.5 -translate-y-0.5" : "text-neutral-700"
+                  }`}
               />
             </div>
 
